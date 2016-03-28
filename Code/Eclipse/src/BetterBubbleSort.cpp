@@ -9,6 +9,8 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
+#include <fstream>
+
 using namespace std;
 
 bool BetterBubbleSort(int array[], int size);
@@ -17,10 +19,13 @@ void SortedPrint(int array[], int size);
 void PrintArray(int array[], int size);
 void GenerateArray(int array[], int size);
 void GenerateOrderedArray(int array[],int size);
+void GenerateReversedArray(int array[], int size);
+bool SaveData(int value, int n);
+
 int main() {
-	int size = 100;
+	int size = 10;
 	int array[size];
-	GenerateOrderedArray(array,size);
+	GenerateReversedArray(array,size);
 	PrintArray(array,size);
 	clock_t start;
 	double duration;
@@ -91,4 +96,18 @@ void GenerateOrderedArray(int array[], int size){
 		int temp = rand()%10+array[i-1];
 		array[i] = temp;
 	}
+}
+void GenerateReversedArray(int array[], int size){
+	srand(time(NULL));
+	array[size-1] = 1;
+	for(int i = size-2; i>=0;i--){
+		int temp = rand()%10+array[i+1];
+		array[i] = temp;
+	}
+}
+bool SaveData(int num, int n){
+	ofstream myfile;
+	myfile.open("BubbleSort.csv",ios::app);
+	myfile<<n<<","<<num<<"\n";
+	myfile.close();
 }

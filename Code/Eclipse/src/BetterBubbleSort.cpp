@@ -25,11 +25,11 @@ bool SaveData(int value, int n, double time, char filename[]);
 int main() {
 	int size = 1000;
 	int steps;
-	//PrintArray(array,size);
 	clock_t start;
 	double duration;
 	int i = 2;
 	char filename[] = "BubbleSort.csv";
+
 	while (i<size){
 		int array[i];
 		GenerateArray(array,i);
@@ -37,11 +37,8 @@ int main() {
 		steps = BetterBubbleSort(array,i);
 		duration = ( clock() - start ) / (double) CLOCKS_PER_SEC;
 		SaveData(steps,i,duration, filename);
-		//cout<<"Iteration: "<<i<<" Complete"<<endl;
 		i++;
 	}
-	cout<<endl<<"Time Taken: "<< duration <<endl;
-	cout<<"Number of steps = "<< steps<<"/"<<size*size/2<<endl;
 	return 0;
 }
 

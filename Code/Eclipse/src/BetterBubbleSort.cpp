@@ -13,36 +13,40 @@
 
 using namespace std;
 
-bool BetterBubbleSort(int array[], int size);
+int BetterBubbleSort(int array[], int size);
 bool IsSorted(int array[],int size);
 void SortedPrint(int array[], int size);
 void PrintArray(int array[], int size);
 void GenerateArray(int array[], int size);
 void GenerateOrderedArray(int array[],int size);
 void GenerateReversedArray(int array[], int size);
-bool SaveData(int value, int n);
+bool SaveData(int value, int n, double time, char filename[]);
 
 int main() {
-	int size = 10;
-	int array[size];
-	GenerateReversedArray(array,size);
-	PrintArray(array,size);
+	int size = 1000;
+	int steps;
+	//PrintArray(array,size);
 	clock_t start;
 	double duration;
-    start = clock();
-
-    BetterBubbleSort(array,size);
-
-	duration = ( clock() - start ) / (double) CLOCKS_PER_SEC;
-	cout<<endl<<"Time Taken: "<< duration <<'\n';
-
-
-	PrintArray(array,size);
-	SortedPrint(array, size);
+	int i = 2;
+	char filename[] = "BubbleSort.csv";
+	while (i<size){
+		int array[i];
+		GenerateArray(array,i);
+		start = clock();
+		steps = BetterBubbleSort(array,i);
+		duration = ( clock() - start ) / (double) CLOCKS_PER_SEC;
+		SaveData(steps,i,duration, filename);
+		//cout<<"Iteration: "<<i<<" Complete"<<endl;
+		i++;
+	}
+	cout<<endl<<"Time Taken: "<< duration <<endl;
+	cout<<"Number of steps = "<< steps<<"/"<<size*size/2<<endl;
 	return 0;
 }
 
-bool BetterBubbleSort(int array[], int size){
+int BetterBubbleSort(int array[], int size){
+	int num_steps = 0;
 	int count = size;
 	bool sflag = true;
 	while (sflag){
@@ -53,11 +57,12 @@ bool BetterBubbleSort(int array[], int size){
 				array[j] = array[j+1];
 				array[j+1] = temp;
 				sflag = true;
+				num_steps++;
 			}
 		}
 		count--;
 	}
-	return true;
+	return num_steps;
 }
 
 bool IsSorted(int array[], int size){
@@ -105,9 +110,13 @@ void GenerateReversedArray(int array[], int size){
 		array[i] = temp;
 	}
 }
-bool SaveData(int num, int n){
+bool SaveData(int num, int n, double time, char filename[]){
 	ofstream myfile;
-	myfile.open("BubbleSort.csv",ios::app);
-	myfile<<n<<","<<num<<"\n";
-	myfile.close();
+	myfile.open(filename,ios::app);
+	if(myfile.is_open()){
+		myfile<<n<<","<<num<<","<<time<<"\n";
+		myfile.close();
+		return true;
+	}
+	return false;
 }

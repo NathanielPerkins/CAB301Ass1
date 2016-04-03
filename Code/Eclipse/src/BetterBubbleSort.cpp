@@ -20,7 +20,7 @@ void PrintArray(int array[], int size);
 void GenerateArray(int array[], int size);
 void GenerateOrderedArray(int array[],int size);
 void GenerateReversedArray(int array[], int size);
-bool SaveData(int value, int n, double time, char filename[]);
+bool SaveData(int num, int n, double time, char filename[]);
 
 int main() {
 	int size = 200;

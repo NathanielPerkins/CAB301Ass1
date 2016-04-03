@@ -23,22 +23,43 @@ void GenerateReversedArray(int array[], int size);
 bool SaveData(int value, int n, double time, char filename[]);
 
 int main() {
-	int size = 1000;
+	int size = 200;
+	int repeat = 10;
 	int steps;
 	clock_t start;
 	double duration;
 	int i = 2;
-	char filename[] = "BubbleSort.csv";
+	char filename[] = "../Python/BubbleSort.csv";
 
 	while (i<size){
+		steps = 0;
+		duration = 0.0;
+		for(int j = 0;j<repeat;j++){
+			int array[i];
+			GenerateArray(array,i);
+			start=clock();
+			steps += BetterBubbleSort(array,i);
+			duration += ( clock() - start)/(double) CLOCKS_PER_SEC;
+		}
+		steps = steps/repeat;
+		duration = duration/(double)repeat;
+		cout<<"Iteration "<<i<<" Complete"<<endl;
+		/*
 		int array[i];
 		GenerateArray(array,i);
 		start = clock();
 		steps = BetterBubbleSort(array,i);
 		duration = ( clock() - start ) / (double) CLOCKS_PER_SEC;
-		SaveData(steps,i,duration, filename);
+		*/
+		if(!SaveData(steps,i,duration, filename)){
+			cout<<"Writing to file failed:"<<endl;
+			cout<<"Number: "<<i<<endl;
+			cout<<"Steps:  "<<steps<<endl;
+			cout<<"Time:   "<<duration<<endl;
+		}
 		i++;
 	}
+	cout<<"Finished Writing to file"<<endl;
 	return 0;
 }
 
@@ -117,3 +138,5 @@ bool SaveData(int num, int n, double time, char filename[]){
 	}
 	return false;
 }
+
+

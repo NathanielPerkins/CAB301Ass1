@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 import math
 import csv
 
-
 def get_data(filename='BubbleSort.csv'):
     iterations = []
     n = []
@@ -21,11 +20,60 @@ def ave_data(input_file,ave_file):
 
 
 n,iterations,time = get_data()
+n,ordered,time_ord = get_data('BubbleSortOrdered.csv')
+n,rev,time_rev = get_data('BubbleSortReversed.csv')
+
 Ave_noFlag = [x*x/2 for x in n]
+nLogn = [x*math.log(x) for x in n]
+plt.figure(1)
 plt.plot(n,Ave_noFlag,linestyle='--',label="BubbleSort without SFlag")
 plt.plot(n,iterations,label="BBS Measured Efficiency")
-plt.legend()
+plt.legend(loc=2)
+plt.title('BubbleSort Operation Comparison')
 plt.ylabel('Computation Steps')
 plt.xlabel('Array Size (n)')
-plt.savefig("../../Report/Comparison.png")
-#plt.show()
+plt.savefig("../../Report/Random.png")
+
+plt.figure(2)
+plt.plot(n,nLogn,linestyle='--',label="N log(N)")
+plt.plot(n,ordered,label = "BBS ordered array")
+plt.legend(loc=2)
+plt.title('BubbleSort Operation Comparison')
+plt.ylabel('Computation Steps')
+plt.xlabel('Array Size (n)')
+plt.savefig("../../Report/Ordered.png")
+
+
+plt.figure(3)
+plt.plot(n,Ave_noFlag,linestyle='--',label="Without Flag")
+plt.plot(n,rev,label = "BBS Reversed array")
+plt.legend(loc=2)
+plt.title('BubbleSort Operation Comparison')
+plt.ylabel('Computation Steps')
+plt.xlabel('Array Size (n)')
+plt.savefig("../../Report/Reversed.png")
+
+plt.figure(4)
+plt.plot(n,time,label = "BBS with randomized array")
+plt.legend(loc=2)
+plt.title('BubbleSort Time Analysis')
+plt.ylabel('Time taken (s)')
+plt.xlabel('Array Size (n)')
+plt.savefig("../../Report/RandomTime.png")
+
+plt.figure(5)
+plt.plot(n,time_ord,label = "BBS with ordered array")
+plt.legend(loc=2)
+plt.title('BubbleSort Time Analysis')
+plt.ylabel('Time taken (s)')
+plt.xlabel('Array Size (n)')
+plt.savefig("../../Report/OrderedTime.png")
+
+plt.figure(6)
+plt.plot(n,time_rev,label = "BBS with reversed array")
+plt.legend(loc=2)
+plt.title('BubbleSort Time Analysis')
+plt.ylabel('Time taken (s)')
+plt.xlabel('Array Size (n)')
+plt.savefig("../../Report/ReversedTime.png")
+plt.show()

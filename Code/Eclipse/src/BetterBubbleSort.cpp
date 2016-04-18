@@ -23,13 +23,17 @@ void GenerateReversedArray(int array[], int size);
 bool SaveData(int num, int n, double time, char filename[]);
 
 int main() {
-	int size = 200;
-	int repeat = 10;
+
+
+	int size = 2000;
+	int repeat = 100;
 	int steps;
 	clock_t start;
 	double duration;
 	int i = 2;
 	char filename[] = "../Python/BubbleSort.csv";
+	char filename1[] = "../Python/BubbleSortOrdered.csv";
+	char filename2[] = "../Python/BubbleSortReversed.csv";
 
 	while (i<size){
 		steps = 0;
@@ -44,13 +48,7 @@ int main() {
 		steps = steps/repeat;
 		duration = duration/(double)repeat;
 		cout<<"Iteration "<<i<<" Complete"<<endl;
-		/*
-		int array[i];
-		GenerateArray(array,i);
-		start = clock();
-		steps = BetterBubbleSort(array,i);
-		duration = ( clock() - start ) / (double) CLOCKS_PER_SEC;
-		*/
+
 		if(!SaveData(steps,i,duration, filename)){
 			cout<<"Writing to file failed:"<<endl;
 			cout<<"Number: "<<i<<endl;
@@ -59,7 +57,56 @@ int main() {
 		}
 		i++;
 	}
-	cout<<"Finished Writing to file"<<endl;
+	cout<<"Finished Writing Random to file"<<endl;
+	i = 2;
+	while (i<size){
+		steps = 0;
+		duration = 0.0;
+		for(int j = 0;j<repeat;j++){
+			int array[i];
+			GenerateOrderedArray(array,i);
+			start=clock();
+			steps += BetterBubbleSort(array,i);
+			duration += ( clock() - start)/(double) CLOCKS_PER_SEC;
+		}
+		steps = steps/repeat;
+		duration = duration/(double)repeat;
+		cout<<"Iteration "<<i<<" Complete"<<endl;
+
+		if(!SaveData(steps,i,duration, filename1)){
+			cout<<"Writing to file failed:"<<endl;
+			cout<<"Number: "<<i<<endl;
+			cout<<"Steps:  "<<steps<<endl;
+			cout<<"Time:   "<<duration<<endl;
+		}
+		i++;
+	}
+	cout<<"Finished Writing Ordered to file"<<endl;
+	i = 2;
+	while (i<size){
+		steps = 0;
+		duration = 0.0;
+		for(int j = 0;j<repeat;j++){
+			int array[i];
+			GenerateReversedArray(array,i);
+			start=clock();
+			steps += BetterBubbleSort(array,i);
+			duration += ( clock() - start)/(double) CLOCKS_PER_SEC;
+		}
+		steps = steps/repeat;
+		duration = duration/(double)repeat;
+		cout<<"Iteration "<<i<<" Complete"<<endl;
+
+		if(!SaveData(steps,i,duration, filename2)){
+			cout<<"Writing to file failed:"<<endl;
+			cout<<"Number: "<<i<<endl;
+			cout<<"Steps:  "<<steps<<endl;
+			cout<<"Time:   "<<duration<<endl;
+		}
+		i++;
+	}
+	cout<<"Finished Writing Reversed to file"<<endl;
+
 	return 0;
 }
 
@@ -137,6 +184,14 @@ bool SaveData(int num, int n, double time, char filename[]){
 		return true;
 	}
 	return false;
+}
+bool SaveAllData(int num[], int n[], double time[], int size, char filename[]){
+	for(int i = 0; i<size;i++){
+		if(!SaveData(num[i],n[i],time[i],filename)){
+			return false;
+		}
+	}
+	return true;
 }
 
 

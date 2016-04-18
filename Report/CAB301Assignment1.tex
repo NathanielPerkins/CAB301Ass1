@@ -17,7 +17,11 @@
 \subsection{Algorithm}
 The general Bubble Sort algorithm works as follows. For every element in the array, successively compare each pair of adjacent elements, up until the total array size minus the current index, swapping each checked pair based on the comparison. For ascending sort, the comparison is if the previous element is larger than the next, and for descending sort the comparison is if the next element is larger than the previous. The reason that not all adjacent pairs are checked each iteration is due to the fact that for each iteration, the current highest element will shift to it's appropriate position in the array. For every iteration over the array, n, the nth element from the end of the listed is correctly indexed and therefore no longer needs to be checked with further iterations.
 \subsection{Average Case Efficiency}
-Explain average case efficiency and order of growth for the basic algorithm, sourced online, for comparison later
+Due to the nature of the algorithm, iterating over the entire loop successively, whilst check and swapping each adjacent pair, the algorithm is inefficient when compared to other methods of sorting. Bubble Sort has a computational efficiency on the order of $\mathcal{O}(n^2)$, with a more specific computational efficiency of $\frac{n^2}{2} + \frac{n}{2}$.
+\cite{BubbleSort}
+In contrast, more efficient algorithms like Heap Sort or Quick Sort have efficiencies on the order of $\mathcal{O}(n\log{}n)$,
+which grows on a much slower scale than Bubble Sort.
+\cite{HeapSort}
 \section{Better Bubble Sort}
 \subsection{Algorithm}
 The basic Bubble Sort algorithm can be improved by introducing a swap flag. Without the swap flag, the algorithm will continue to compare elements of the array, regardless of whether the array has been sorted. A swap flag, which drives the main loop will ensure that the algorithm exits prematurely should the array elements reach a sorted state. 
@@ -112,6 +116,10 @@ your computer that are not allowed for in the theoretical analysis. (However, a 
 totally random scatterplot is more likely to be due to errors in your experimental methodology
 in this case!)
 
+
 \section{Appendix}
+
+\bibliographystyle{IEEEtran}
+\bibliography{References/FullRef}
 
 \end{document}          

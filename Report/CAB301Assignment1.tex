@@ -15,15 +15,23 @@
 \section{Executive Summary}
 \section{Bubble Sort}
 \subsection{Algorithm}
-Briefly Describe Algorithm
+The general Bubble Sort algorithm works as follows. For every element in the array, successively compare each pair of adjacent elements, up until the total array size minus the current index, swapping each checked pair based on the comparison. For ascending sort, the comparison is if the previous element is larger than the next, and for descending sort the comparison is if the next element is larger than the previous. The reason that not all adjacent pairs are checked each iteration is due to the fact that for each iteration, the current highest element will shift to it's appropriate position in the array. For every iteration over the array, n, the nth element from the end of the listed is correctly indexed and therefore no longer needs to be checked with further iterations.
 \subsection{Average Case Efficiency}
 Explain average case efficiency and order of growth for the basic algorithm, sourced online, for comparison later
 \section{Better Bubble Sort}
 \subsection{Algorithm}
-Briefly describe algorithm and how it differs from basic bubble sort
+The basic Bubble Sort algorithm can be improved by introducing a swap flag. Without the swap flag, the algorithm will continue to compare elements of the array, regardless of whether the array has been sorted. A swap flag, which drives the main loop will ensure that the algorithm exits prematurely should the array elements reach a sorted state. 
+\\
+INSERT ALGORITHM WITH SWAP HERE
+\\
 \subsection{Basic Operation}
-You must explain clearly the choice of basic operation for the particular algorithm of interest.
+The operation chosen, to analyse the efficiency of the algorithm is the number of individual swap operations. This aggregate operation defines the core design of the Bubble Sort algorithm, with it being common to both designs, with and without the swap flag.
+\\
+INSERT APPENDIX LINK OF STEPS CHECK
+\\
 \subsection{Average Case Efficiency}
+The efficiency of the Better Bubble Sort algorithm is highly dependant on original algorithms efficiency. It is of the same order INSERT SOURCE HERE as the original algorithm, as the fundamental design hasn't changed. However, the addition of the swap flag allows the algorithm to exit prematurely if it has completely sorted the array before the full algorithm has completed. Due to this check flag, it is very hard to quantify the improvements that this addition makes using theoretical analysis alone, as it is highly dependant on the ordering of the array given to the algorithm. 
+\\
 Your report must summarise the expected time efficiency of the algorithm with respect to the
 size of its input(s). This should be expressed as the algorithm’s predicted average-case
 efficiency and/or order of growth. You must explain as clearly as possible how these
@@ -31,9 +39,26 @@ predictions were calculated or justified. (In some cases you will find an approp
 in the literature. In other cases you may need to calculate the algorithm’s efficiency yourself.)
 \section{Methodology}
 \subsection{Computing Environment}
-Explain the use of linux, eclipse as a C++ IDE and the usage of python as data analysis
+
+For experimental analysis, the computing environment can play a pivotal role in the specific results and has therefore been documented. 
+\begin{enumerate}
+	\item Operating System: The operating system used for the construction, data generation and analysis of report is Linux, specifically Ubuntu 15.10. This was chosen as it includes easy to use, pre-installed packages that aid in the programming of C++ and python which was also used. All code was then checked to conform with Microsoft Windows for veracity of design.
+	\item Algorithm: For creation of the algorithm, C++ was used. C++ is an efficient, and fast language that gives good freedom over design and memory, whilst still maintaining high level functionality. The Eclipse cross platform IDE was chosen to program the algorithm in, which gave access to debugging tools and automated compiling. For veracity, this was later ported to the code::blocks IDE and tested.
+	\item Data Analysis
+\begin{enumerate}
+	\item Storage: CSV file format was used extensively to store the data directly via the C++ executable. CSV, or comma separated variables is an easy to use file format that separates all variables through the use of commas, this makes it perfect to easily get file formatting and output with C++. Python has in built functionality to interpret CSV files and was also a good choice in that regards, allowing the easy import of the data for plotting.
+	\item Analysis: Python was used to interpret the data taken from CSV into graphs using the matplotlib graphing library. Python is a cross platform, high level scripting language with lots of in built scientific analysis features and is therefore a good choice to evaluate the data from any location or machine. matplotlib is a free library that easily plots data. 
+\end{enumerate}
+	\item Report: To build the report and everything included, LaTeX was used. LaTex allows good control over document flow and it's primary purpose, the easy inclusion of mathematical formulae and equations fits perfectly with the overall design of the report.
+\end{enumerate}
 \subsection{Test Data Generation}
-Explain the generate array, reverse array for worst case etc
+To test the algorithm, it is important to note the types of arrays used as an input. Arrays sorted in specific manners can skew results, and lead to different performance than intended. As the main test of the report is on the average case, the generation of randomised arrays was of utmost importance, however, for testing, best case and worst case array generation was also performed. 
+
+\begin{enumerate}
+	\item Random arrays: Initialising the random seed based on the current system time, then generate each element as a random number from 1-100. With each element being a random number with no association to the previous or next element, a truly randomised list is created.
+	\item Ordered arrays: Initialising the random seed based on the current system time, setting the first element to be 1 and then proceeding to generate a random number between 0-9 and adding it to the previous array element and setting the next element equal to the result ensures that a strictly ascending array is generated.
+	\item Reversed arrays: Initialising the random seed based on the current system time, setting the last element to be 1 and then proceeding to generate a random number between 0-9 and adding it to the next array element and setting the previous element equal to the result ensure that a strictly descending array is generated.
+\end{enumerate}
 \section{Implementation}
 \subsection{Program}
 \subsection{Testing}
@@ -87,6 +112,6 @@ your computer that are not allowed for in the theoretical analysis. (However, a 
 totally random scatterplot is more likely to be due to errors in your experimental methodology
 in this case!)
 
-
+\section{Appendix}
 
 \end{document}          

@@ -112,11 +112,11 @@ int main() {
 
 int BetterBubbleSort(int array[], int size){
 	int num_steps = 0;
-	int count = size;
+	int count = size-1;
 	bool sflag = true;
 	while (sflag){
 		sflag = false;
-		for (int j = 0; j<count-1;j++){
+		for (int j = 0; j<=count-1;j++){
 			if (array[j+1] < array[j]){
 				int temp = array[j];
 				array[j] = array[j+1];

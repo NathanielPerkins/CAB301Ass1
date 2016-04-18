@@ -45,8 +45,8 @@ plt.savefig("../../Report/Ordered.png")
 
 
 plt.figure(3)
-plt.plot(n,Ave_noFlag,linestyle='--',label="Without Flag")
 plt.plot(n,rev,label = "BBS Reversed array")
+plt.plot(n,Ave_noFlag,'r',linestyle='--',label="Without Flag")
 plt.legend(loc=2)
 plt.title('BubbleSort Operation Comparison')
 plt.ylabel('Computation Steps')

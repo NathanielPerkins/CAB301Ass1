@@ -85,18 +85,14 @@ The main function instantiates a number of required variables, including file na
 \subsection{Testing}
 For testing purposes, a helper function was used throughout the whole development process, as well as actively being used in the data generation in the main function. IsSorted, as seen in Appendix B takes an array and checks if it's correctly sorted in ascending order. 
 \\\\
-For validity and checking purposes, reversed arrays and ordered arrays are also generated and compared against their theoretical results, these functions are also seen in Appendix B. 
+For validity and checking purposes, reversed arrays and ordered arrays are also generated and compared against their theoretical results, these functions are also seen in Appendix B.
 \section{Experimental Results}
 \subsection{Operational Efficiency}
 An addition has been made to the algorithm through the usage of num\_steps variable which keep track of the number of swaps made and is incremented on the inner most loop, corresponding to each time an array swap has occurred. This can be seen in the comments of the code in Appendix B. The addition of the variable doesn't affect the overall performance in regards to growth of operational complexity. It has only a trivial affect on the duration taken for each sorting as it's only a single instruction addition to the algorithm.
 \\
-You must perform enough experiments to produce a clear ‘trend’ in the outcomes. Your
-report must explain how you produced test data. Depending on the kind of algorithm
-involved, you may need to produce sets of ‘random’ values (so that you can produce average-
-case results for a particular size of input), or an ordered sequence of test values (so that you
-can show how the algorithm grows with respect to the input’s size). In either case you may
-choose to create test data manually (which may be very tedious) or automatically (which may
-require some programming).
+Comparing against the average case efficiency of the base algorithm, it can be seen in Appendix C that the swap flag version of the algorithm fares significantly better in computational complexity. As mentioned in methodology, data was generated for each array size between 2 to 2000, repeated 100 times each and the average was taken. The average case of the efficiency was computed by creating randomly sorted arrays, as mentioned in the Implementation and methodology sections. The measured computational steps grows on an order similar to the average case for un-optimized bubble sort, however, it grows at a slower rate in that order class. This is expected and in line with theoretical results. The addition of the swap flag allows the algorithm to exit early if its completed sorting, and thus it's expected that the efficiency be less than or in extreme cases, equal to the efficiency of the un-optimised algorithm. 
+\\\\
+To compare further against the un-optimised algorithm, the very worst case was computed for the optimised algorithm. The worst case for the optimised algorithm is when the swap flag gets no opportunity to exit prematurely. This will be when the array is completely reversed. Data was again generated as per the methodology section, with incremental array sizes from 2 to 2000, and the average of 100 cases per array size was taken. Results can be seen in Appendix C, The Worst case for the optimized version is the same number of computations for the un-optimized average case. 
 \\
 You must present your experimental results as a graph. NB: You must state clearly how many
 data points contribute to the line(s) on the graph and what each data point represents. If
@@ -315,6 +311,17 @@ int main() {
 	\end{lstlisting}
 \end{figure}
 \section{Appendix C - Experimental Results}
+As array size (n) increases, as seen below, it can be seen that the measured computational steps increases at a slower rate than $\frac{n^2}{2}$, denoted by the light blue line. 
+\begin{figure}[H]\label{MeasuredRandom}
+	\centering
+	\caption{Bubblesort Operation Comparison: Expected vs Actual}
+	\includegraphics[width=0.8\textwidth]{Random.png}
+\end{figure}
+\begin{figure}[H]\label{MeasuredReversed}
+	\centering
+	\caption{Bubblesort Reversed Array against average case}
+	\includegraphics[width=0.8\textwidth]{Reversed.png}
+\end{figure}
 \bibliographystyle{IEEEtran}
 \bibliography{References/FullRef}
 

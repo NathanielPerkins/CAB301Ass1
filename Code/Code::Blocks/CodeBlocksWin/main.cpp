@@ -24,7 +24,7 @@ bool SaveData(int num, int n, double time, char filename[]);
 
 int main() {
 
-
+	srand(time(NULL));
 	int size = 2000;
 	int repeat = 100;
 	int steps;
@@ -123,23 +123,24 @@ int main() {
 }
 
 int BetterBubbleSort(int array[], int size){
-	int num_steps = 0;
+	int num_steps = 0; // This tracks the operation count
 	int count = size-1;
 	bool sflag = true;
 	while (sflag){
 		sflag = false;
 		for (int j = 0; j<=count-1;j++){
 			if (array[j+1] < array[j]){
+				//Swap the 2 array elements
 				int temp = array[j];
 				array[j] = array[j+1];
 				array[j+1] = temp;
 				sflag = true;
-				num_steps++;
+				num_steps++; //Increment the operation counter
 			}
 		}
 		count--;
 	}
-	return num_steps;
+	return num_steps; //Return the operation count
 }
 
 bool IsSorted(int array[], int size){
@@ -165,14 +166,12 @@ void PrintArray(int array[],int size){
 	}
 }
 void GenerateArray(int array[], int size){
-	srand(time(NULL));
 	for(int i = 0; i<size;i++){
 		int temp = rand()%100+1;
 		array[i] = temp;
 	}
 }
 void GenerateOrderedArray(int array[], int size){
-	srand(time(NULL));
 	array[0] = 1;
 	for(int i = 1; i<size;i++){
 		int temp = rand()%10+array[i-1];
@@ -180,7 +179,6 @@ void GenerateOrderedArray(int array[], int size){
 	}
 }
 void GenerateReversedArray(int array[], int size){
-	srand(time(NULL));
 	array[size-1] = 1;
 	for(int i = size-2; i>=0;i--){
 		int temp = rand()%10+array[i+1];

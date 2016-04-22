@@ -135,8 +135,8 @@ int BetterBubbleSort(int array[], int size){
 				array[j] = array[j+1];
 				array[j+1] = temp;
 				sflag = true;
-				num_steps++; //Increment the operation counter
 			}
+			num_steps++; //Increment the operation counter to indicate a comparison has been made
 		}
 		count--;
 	}

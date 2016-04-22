@@ -2,19 +2,19 @@
 \contentsline {section}{\numberline {2}Bubble Sort}{3}
 \contentsline {subsection}{\numberline {2.1}Algorithm}{3}
 \contentsline {subsection}{\numberline {2.2}Average Case Efficiency}{3}
-\contentsline {section}{\numberline {3}Better Bubble Sort}{3}
-\contentsline {subsection}{\numberline {3.1}Algorithm}{3}
-\contentsline {subsection}{\numberline {3.2}Basic Operation}{3}
+\contentsline {section}{\numberline {3}Better Bubble Sort}{4}
+\contentsline {subsection}{\numberline {3.1}Algorithm}{4}
+\contentsline {subsection}{\numberline {3.2}Basic Operation}{4}
 \contentsline {subsection}{\numberline {3.3}Average Case Efficiency}{4}
-\contentsline {section}{\numberline {4}Methodology}{4}
-\contentsline {subsection}{\numberline {4.1}Computing Environment}{4}
+\contentsline {section}{\numberline {4}Methodology}{5}
+\contentsline {subsection}{\numberline {4.1}Computing Environment}{5}
 \contentsline {subsection}{\numberline {4.2}Test Data Generation}{5}
 \contentsline {section}{\numberline {5}Implementation}{6}
 \contentsline {subsection}{\numberline {5.1}Program}{6}
-\contentsline {subsection}{\numberline {5.2}Testing}{6}
-\contentsline {section}{\numberline {6}Experimental Results}{6}
-\contentsline {subsection}{\numberline {6.1}Operational Efficiency}{6}
-\contentsline {subsection}{\numberline {6.2}Time Efficiency}{7}
+\contentsline {subsection}{\numberline {5.2}Testing}{7}
+\contentsline {section}{\numberline {6}Experimental Results}{7}
+\contentsline {subsection}{\numberline {6.1}Operational Efficiency}{7}
+\contentsline {subsection}{\numberline {6.2}Time Efficiency}{8}
 \contentsline {section}{\numberline {7}Appendix A - Algorithm}{8}
 \contentsline {section}{\numberline {8}Appendix B - C++ Implementation}{9}
 \contentsline {section}{\numberline {9}Appendix C - Experimental Results}{12}

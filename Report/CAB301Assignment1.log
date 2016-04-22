@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.3.22)  21 APR 2016 19:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.3.22)  22 APR 2016 22:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -193,36 +193,51 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout3 = `CAB301Assignment1.toc'.
 
  [2]
-Underfull \hbox (badness 10000) in paragraph at lines 53--56
+Underfull \hbox (badness 10000) in paragraph at lines 37--40
 
  []
 
-[3] [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 81--84
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 58--61
 
  []
 
-
+[4] [5]
 Underfull \hbox (badness 10000) in paragraph at lines 86--89
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--107
+Underfull \hbox (badness 10000) in paragraph at lines 91--94
 
  []
 
 [6]
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ˜ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ™ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ™ in font cmr10!
- [7] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+Underfull \hbox (badness 10000) in paragraph at lines 96--103
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--103
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--103
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--110
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--110
+
+ []
+
+[7] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -231,53 +246,80 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
-LaTeX Font Info:    Try loading font information for OML+cmss on input line 142
+LaTeX Font Info:    Try loading font information for OML+cmss on input line 121
 .
-LaTeX Font Info:    No file OMLcmss.fd. on input line 142.
+LaTeX Font Info:    No file OMLcmss.fd. on input line 121.
 
 
 LaTeX Font Warning: Font shape `OML/cmss/m/n' undefined
 (Font)              using `OML/cmm/m/it' instead
-(Font)              for symbol `textgreater' on input line 142.
+(Font)              for symbol `textgreater' on input line 121.
 
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 170
+[8]
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 150
 .
-LaTeX Font Info:    No file OMScmss.fd. on input line 170.
+LaTeX Font Info:    No file OMScmss.fd. on input line 150.
+
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 170.
+(Font)              for symbol `textbraceleft' on input line 150.
 
-[8] [9] [10]
+[9] [10]
 Overfull \vbox (104.13231pt too high) has occurred while \output is active []
 
 
-[11] <Random.png, id=50, 578.16pt x 433.62pt>
+[11] <Random.png, id=51, 578.16pt x 433.62pt>
 File: Random.png Graphic file (type png)
  <use Random.png>
-Package pdftex.def Info: Random.png used on input line 318.
-(pdftex.def)             Requested size: 276.00105pt x 206.9972pt.
-
-<Reversed.png, id=52, 578.16pt x 433.62pt>
-File: Reversed.png Graphic file (type png)
- <use Reversed.png>
-Package pdftex.def Info: Reversed.png used on input line 323.
+Package pdftex.def Info: Random.png used on input line 301.
 (pdftex.def)             Requested size: 276.00105pt x 206.9972pt.
  [12]
-(./CAB301Assignment1.bbl [13 <./Random.png> <./Reversed.png>]) [14]
+<RandomZoom.png, id=56, 586.8324pt x 442.2924pt>
+File: RandomZoom.png Graphic file (type png)
+ <use RandomZoom.png>
+Package pdftex.def Info: RandomZoom.png used on input line 307.
+(pdftex.def)             Requested size: 276.00105pt x 208.02592pt.
+
+<Reversed.png, id=57, 578.16pt x 433.62pt>
+File: Reversed.png Graphic file (type png)
+ <use Reversed.png>
+Package pdftex.def Info: Reversed.png used on input line 313.
+(pdftex.def)             Requested size: 276.00105pt x 206.9972pt.
+ [13 <./Random.png> <./RandomZoom.png>] <Ordered.png, id=64, 578.16pt x 433.62p
+t>
+File: Ordered.png Graphic file (type png)
+
+<use Ordered.png>
+Package pdftex.def Info: Ordered.png used on input line 319.
+(pdftex.def)             Requested size: 276.00105pt x 206.9972pt.
+ <RandomTime.png, id=65, 578.16pt x 433.62pt>
+File: RandomTime.png Graphic file (type png)
+
+<use RandomTime.png>
+Package pdftex.def Info: RandomTime.png used on input line 325.
+(pdftex.def)             Requested size: 276.00105pt x 206.9972pt.
+ [14 <./Reversed.png> <./Ordered.png>]
+<OrderedTime.png, id=71, 578.16pt x 433.62pt>
+File: OrderedTime.png Graphic file (type png)
+ <use OrderedTime.png>
+Package pdftex.def Info: OrderedTime.png used on input line 331.
+(pdftex.def)             Requested size: 276.00105pt x 206.9972pt.
+
+(./CAB301Assignment1.bbl [15 <./RandomTime.png>]) [16 <./OrderedTime.png>]
 (./CAB301Assignment1.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 3116 strings out of 494957
- 44626 string characters out of 6180028
- 189821 words of memory out of 5000000
- 6326 multiletter control sequences out of 15000+600000
+ 3140 strings out of 494957
+ 45044 string characters out of 6180028
+ 175340 words of memory out of 5000000
+ 6346 multiletter control sequences out of 15000+600000
  8541 words of font info for 30 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 38i,7n,60p,948b,1389s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,7n,60p,876b,1389s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
@@ -291,10 +333,10 @@ cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on CAB301Assignment1.pdf (14 pages, 256772 bytes).
+Output written on CAB301Assignment1.pdf (16 pages, 420998 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 76 compressed objects within 1 object stream
+ 125 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
